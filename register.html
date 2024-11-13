@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Siya Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleOne.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="img/logo1.png" alt="Fitness Logo">
+            <div><span>F</span>ITNESS <span>C</span>LUB</div>
+        </div>
+        <div class="mid">
+            <ul class="navbar" id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="fitnesscal.html">Fitness Calculator</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="tel:+9123456789" class="btn">Call Us Now</a>
+            <a href="mailto:hack1234yaz@gmail.com" class="btn">Email Us</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Create an Account</h1>
+        <form action="register_process.php" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="locality" id="locality" placeholder="Enter your locality" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p >Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+</body>
+
+</html>

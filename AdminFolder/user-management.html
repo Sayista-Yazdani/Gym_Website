@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Siya Fitness</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Marko+One&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/gym_website/img/logo1.png" alt="Fitness Logo">
+            <div><span>F</span>ITNESS <span>C</span>LUB</div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="user-management.html" class="active">User  Management</a></li>
+                <li><a href="class-management.html">Class Management</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>User Management</h1>
+        <section class="form-container">
+            <h2>Add New User</h2>
+            <form id="userForm">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="number" id="age" placeholder="Age" required>
+                <select id="gender" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="text" id="locality" placeholder="Locality" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" placeholder="Phone No." required>
+                <button type="submit">Add User</button>
+            </form>
+        </section>
+
+        <section class="user-list">
+            <h2>User List</h2>
+            <table id="userTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Locality</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                    <th>Actions</th>
+                </tr>
+                <!-- User list will be populated here -->
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

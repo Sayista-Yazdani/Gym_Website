@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Calculator - Gym Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+
+
+<link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Include the provided CSS here */
+      .midcontaint{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+        .container {
+            background-color: rgba(131, 126, 126, 0.4);
+            border: 2px solid white;
+            margin: 60px 0 30px 60px;
+            padding: 35px;
+            border-radius: 28px;
+            text-align: center;
+            width: 55%;
+        }
+
+        .container h1 {
+            color: darkgoldenrod;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+
+    
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+
+        .form-group select {
+            width: 80%;
+            /* Set the width */
+            height: 40px;
+            /* Set the height */
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid black;
+            /* Match the border style */
+            color: gray;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 80%;
+            }
+            .container{
+                margin: 70px 30px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body class="midcontaint">
+    <div class="container" data-aos="fade-right">
+        <h1>Fitness Calculator</h1>
+
+        <div class="form-group">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight" required>
+        </div>
+
+        <div class="form-group">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter your height" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="activityLevel">Activity Level:</label><br>
+            <select id="activityLevel">
+                <option value="1.2">Sedentary (little or no exercise)</option>
+                <option value="1.375">Lightly active (light exercise/sports 1-3 days/week)</option>
+                <option value="1.55">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+                <option value="1.725">Very active (hard exercise/sports 6-7 days a week)</option>
+                <option value="1.9">Super active (very hard exercise/physical job & exercise 2x/day)</option>
+            </select>
+        </div>
+
+        <button onclick="calculate()">Calculate</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+  AOS.init({
+            duration: 600, // Animation duration
+            easing: 'ease-in-out', // Easing function
+            once: true, // Whether animation should happen only once - while scrolling down
+        });
+
+
+        function calculate() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100; // convert cm to m
+            const age = parseInt(document.getElementById('age').value);
+            const activityLevel = parseFloat(document.getElementById('activityLevel').value);
+
+            // Calculate BMI
+            const bmi = (weight / (height * height)).toFixed(2);
+
+            // Calculate BMR (Harris-Benedict Equation)
+            const bmr = (10 * weight) + (6.25 * (height * 100)) - (5 * age) + 5; // For men
+            // If you want to calculate for women, use the following line instead:
+            // const bmr = (10 * weight) + (6.25 * (height * 100)) - (5 * age) - 161;
+
+            // Calculate daily calorie needs based on activity level
+            const dailyCalories = (bmr * activityLevel).toFixed(2);
+
+            // Display results
+            document.getElementById('result').innerHTML = `
+                <p>Your BMI: <strong>${bmi}</strong></p>
+                <p>Your estimated daily calorie needs: <strong>${dailyCalories} calories</strong></p>
+            `;
+        }
+
+
+    
+    
+      
+
+    </script>
+</body>
+
+</html>

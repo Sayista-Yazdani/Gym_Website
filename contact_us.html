@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Gym Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Include the provided CSS here */
+
+        .midcontaint {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(131, 126, 126, 0.4);
+            border: 2px solid white;
+            margin: 60px 0 30px 60px;
+            padding: 35px;
+            border-radius: 28px;
+            text-align: center;
+
+        }
+
+        .container h1 {
+            text-align: center;
+            color: darkgoldenrod;
+            font-size: 26px;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            text-align: center;
+            display: block;
+            width: 80%;
+            padding: 10px;
+            margin: 11px auto;
+            font-size: 17.7px;
+            font-family: "Baloo Bhaijaan 2", sans-serif, cursive;
+            border-radius: 8px;
+            border: 2px solid black;
+        }
+
+        .container button {
+
+            padding: 10px;
+            margin: 20px auto;
+
+        }
+
+        .container button:hover {
+            background-color: darkgoldenrod;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 80%;
+            }
+
+            .container{
+                margin: 70px 30px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body class="midcontaint">
+    <div class="container" data-aos="fade-up">
+        <h1>Contact Us</h1>
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button onclick="submitForm()">Submit</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+
+        AOS.init();
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Here you can handle the form submission, e.g., send the data to a server
+            // For demonstration, we will just display a success message
+            document.getElementById('result').innerHTML = `
+                <p>Thank you, <strong>${name}</strong>! Your message has been received.</p>
+                <p>We will get back to you at<br>
+                <strong>${email}</strong><br> shortly.</p>
+            `;
+
+            // Clear the form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Management - Siya Fitness</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Marko+One&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/gym_website/img/logo1.png" alt="Fitness Logo">
+            <div><span>F</span>ITNESS <span>C</span>LUB</div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="user-management.html">User  Management</a></li>
+                <li><a href="class-management.html" class="active">Class Management</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Class Management</h1>
+        <section class="form-container">
+            <h2>Add New Class</h2>
+            <form id="classForm">
+                <input type="text" id="className" placeholder="Class Name" required>
+                <input type="text" id="instructor" placeholder="Instructor Name" required>
+                <input type="text" id="schedule" placeholder="Schedule (e.g., Mon 6PM)" required>
+                <input type="number" id="capacity" placeholder="Capacity" required>
+                <button type="submit">Add Class</button>
+            </form>
+        </section>
+
+        <section class="class-list">
+            <h2>Class List</h2>
+            <table id="classTable">
+                <tr>
+                    <th>Class Name</th>
+                    <th>Instructor</th>
+                    <th>Schedule</th>
+                    <th>Capacity</th>
+                    <th>Actions</th>
+                </tr>
+                <!-- Class list will be populated here -->
+ </table>
+        </section>
+    </div>
+
+    <script>
+        // Simulated data fetch function
+        function fetchClasses() {
+            // Replace with actual API call or data fetch
+            const classes = [
+                { id: 1, name: 'Yoga', instructor: 'John Doe', schedule: 'Mon 6PM', capacity: 20 },
+                { id: 2, name: 'Zumba', instructor: 'Jane Doe', schedule: 'Tue 7PM', capacity: 30 },
+                { id: 3, name: 'Pilates', instructor: 'Bob Smith', schedule: 'Wed 8PM', capacity: 25 },
+            ];
+
+            // Render the class list
+            const classTableBody = document.getElementById('classTableBody');
+            classTableBody.innerHTML = '';
+            classes.forEach((cls) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${cls.name}</td>
+                    <td>${cls.instructor}</td>
+                    <td>${cls.schedule}</td>
+                    <td>${cls.capacity}</td>
+                    <td><button class="delete-btn" data-id="${cls.id}">Delete</button></td>
+                `;
+                classTableBody.appendChild(row);
+            });
+        }
+
+        // Add event listener to the form submission
+        document.getElementById('classForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const className = document.getElementById('className').value;
+            const instructor = document.getElementById('instructor').value;
+            const schedule = document.getElementById('schedule').value;
+            const capacity = document.getElementById('capacity').value;
+
+            // Simulated API call to add a new class
+            const newClass = { id: Date.now(), name: className, instructor, schedule, capacity };
+            // Replace with actual API call or data fetch
+            console.log('New class added:', newClass);
+
+            // Clear the form fields
+            document.getElementById('className').value = '';
+            document.getElementById('instructor').value = '';
+            document.getElementById('schedule').value = '';
+            document.getElementById('capacity').value = '';
+
+            // Re-render the class list
+            fetchClasses();
+        });
+
+        // Add event listener to the delete buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete-btn')) {
+                const classId = e.target.dataset.id;
+                // Simulated API call to delete a class
+                console.log(`Class ${classId} deleted`);
+                // Replace with actual API call or data fetch
+                fetchClasses();
+            }
+        });
+
+        // Call the fetch function when the page loads
+        window.addEventListener('load', fetchClasses);
+    </script>
+</body>
+
+</html>

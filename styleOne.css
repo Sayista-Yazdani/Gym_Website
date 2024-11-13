@@ -1,0 +1,300 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(img/adult-.jpg);
+    font-family: "Baloo Bhaijaan 2", 'sans-serif', 'cursive';
+    color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* height: 100vh; */
+}
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+
+}
+
+html::-webkit-scrollbar-thumb {
+    background: hsl(0, 5%, 27%);
+    border-radius: 30px;
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.left {
+   
+    position: absolute;
+    left: 55px;
+    top: 20px;
+    /* border: 2px solid red; */
+    display: inline-block;
+    text-align: center;
+   
+
+}
+
+.left img {
+    width: 100px;
+    /* filter: invert(100%); */
+    display: inline-block;
+
+}
+
+.left div span{
+    color: darkgoldenrod;
+    font-size: 28px;
+    font-weight: 600;
+}
+.left div {
+    line-height: 0px;
+    font-size: 22px;
+    text-align: center;
+    margin-top: -25px;
+}
+
+
+
+.mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 45%;
+    margin: 18px auto;
+    /* border: 2px solid yellow; */
+}
+
+.hamburger {
+    display: none;
+    /* Hidden by default */
+    font-size: 26px;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 28px;
+
+}
+
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    display: inline-block;
+    font-size: 17.2px;
+
+
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 20px 18px;
+}
+
+
+.navbar li a:hover,
+.navbar li a.active {
+    text-decoration: underline;
+    color: darkgoldenrod;
+}
+
+
+.right {
+    position: absolute;
+    right: 34px;
+    top: 33px;
+    /* border: 2px solid blue; */
+}
+
+.btn {
+    font-family: "Baloo Bhaijaan 2", sans-serif, cursive;
+    margin: 0px 9px;
+    color: white;
+    background-color: black;
+    padding: 4px 14px;
+    border-radius: 10px 0px;
+    cursor: pointer;
+    border: 2px solid white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: goldenrod;
+    transition: all .3s ease-in;
+}
+
+
+
+.container {
+    max-width: 620px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(131, 126, 126, 0.4);
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+.container hr{
+    color: #ddd;
+}
+.container p a{
+    color: royalblue;
+    
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #544949;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #444;
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 80%;
+    }
+    .header {
+        margin-bottom: 120px;
+    }
+    .left img {
+        width: 55px;
+    }
+
+    .left {
+        left: 15px;
+        top: 20px;
+        /* border: 2px solid red; */
+    }
+
+    .left div {
+        text-align: center;
+        margin-top: -10px;
+    }
+    
+
+
+    .navbar {
+        display: none;
+        /* Hide the navbar  */
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        background-color: rgba(131, 126, 126, 0.8);
+        width: 50%;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .navbar.active {
+        display: block;
+        /* Show the menu when it active */
+    }
+
+    .hamburger {
+        display: block;
+        /* Show hamburger icon */
+
+    }
+
+    .navbar li {
+        padding: 10px;
+        text-align: center;
+        display: block;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 345px;
+        right: 0;
+        row-gap: 67px;
+        /* justify-content: flex-end; */
+
+    }
+
+
+    .right .btn {
+        transform: rotate(90deg);
+        padding: 6px 8px;
+        text-align: center;
+
+    }
+
+
+    .container {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 380px) {
+    html {
+        font-size: 60%;
+    }
+
+
+    .left img {
+        width: 48px;
+    }
+
+    .left div {
+
+        font-size: 20px;
+        text-align: center;
+
+    }
+
+
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .container button {
+        width: 100%;
+    }
+
+}

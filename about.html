@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Gym Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+
+
+
+    <style>
+        /* Include the provided CSS here */
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-image: url(img/adult-.jpg);
+            font-family: "Baloo Bhaijaan 2", sans-serif, cursive;
+            color: white;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: transparent;
+
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: hsl(0, 5%, 27%);
+            border-radius: 5rem;
+        }
+
+        .container {
+            background-color: rgba(131, 126, 126, 0.4);
+            border: 2px solid white;
+            margin: 55px 68px;
+            padding: 35px;
+            border-radius: 28px;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: darkgoldenrod;
+            font-size: 26px;
+        }
+
+        .mission,
+        .values,
+        .team {
+            margin: 22px 0;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+
+        .team-member h3 {
+            margin: 0;
+        }
+
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 80%;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 60%;
+            }
+
+            .team-member {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"  >
+        <h1>About Us</h1>
+
+        <div class="mission" data-aos="fade-left">
+            <h2>Our Mission</h2>
+            <p>At FitLife Gym, our mission is to empower individuals to achieve their fitness goals through personalized
+                training, community support, and a commitment to health and wellness.</p>
+        </div>
+
+        <div class="values" data-aos="fade-right">
+            <h2>Our Values</h2>
+            <ul>
+                <li>Integrity: We believe in honesty and transparency in all our interactions.</li>
+                <li>Community: We foster a supportive environment where everyone feels welcome.</li>
+                <li>Excellence: We strive for the highest standards in training and facilities.</li>
+                <li>Innovation: We embrace new ideas and technologies to enhance the fitness experience.</li>
+            </ul>
+        </div>
+
+        <div class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-member" data-aos="fade-left">
+                <img src="img/trainer-1.webp" alt="Trainer 1">
+                <div>
+                    <h3>Marrey Doe</h3>
+                    <p>Head Trainer - Specializes in strength training and nutrition.</p>
+                </div>
+            </div>
+            <div class="team-member"  data-aos="fade-right">
+                <img src="img/trainer-2.webp" alt="Trainer 2">
+                <div>
+                    <h3>Jane Smith</h3>
+                    <p>Yoga Instructor - Focuses on flexibility and mindfulness.</p>
+                </div>
+            </div>
+            <div class="team-member" data-aos="fade-left">
+                <img src="img/trainer-3.webp" alt="Trainer 3">
+                <div>
+                    <h3>Mike Johnson</h3>
+                    <p>Cardio Specialist - Expert in high-intensity interval training.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600, // Animation duration
+            easing: 'ease-in-out', // Easing function
+            once: true, // Whether animation should happen only once - while scrolling down
+        });
+    </script>
+</body>
+
+</html>

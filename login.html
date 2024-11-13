@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Siya Fitness</title>
+    <link rel="stylesheet" href="styleOne.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- for logo -->
+        <div class="left">
+            <img src="img/logo1.png" alt="Fitness Logo">
+            <div><span>F</span>ITNESS <span>C</span>LUB</div>
+        </div>
+
+        <!-- for nav -->
+        <div class="mid">
+
+            <ul class="navbar" id="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="fitnesscal.html">Fitness Calculator</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <!-- for some buttons -->
+        <div class="right">
+            <a href="tel:+9123456789" class="btn ">Call Us Now</a>
+            <a href="mailto:hack1234yaz@gmail.com" class="btn">Email Us</a>
+
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Login to Your Account</h1>
+        <form action="login_process.php" method="POST">
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+      <hr>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+    <script>
+           function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active'); // Toggle the 'active' class to show/hide the menu
+        }
+
+    </script>
+</body>
+</html>
